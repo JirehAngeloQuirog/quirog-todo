@@ -15,7 +15,7 @@ ALLOWED_HOSTS = ['quirog-todo.onrender.com', 'localhost', '127.0.0.1']
 # CORS (for GitHub Pages frontend)
 CORS_ALLOWED_ORIGINS = [
     "https://jirehangeloquirog.github.io",
-    "http://localhost:5173",  
+    "http://localhost:5174",  
     "http://127.0.0.1:5173",
 ]
 
@@ -77,7 +77,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'todobackend.wsgi.application'
 
 # Database setup: PostgreSQL on Render, fallback to SQLite locally
-DATABASE_URL = os.getenv('DATABASE_URL')
+DATABASE_URL = os.getenv('postgresql://quirog_todobackend_user:tI1A62gDv1g3JfZpFe7v3NZhF4wvcIK1@dpg-cvppg895pdvs73ed9bmg-a.oregon-postgres.render.com/quirog_todobackend')
 
 if DATABASE_URL:
     DATABASES = {
