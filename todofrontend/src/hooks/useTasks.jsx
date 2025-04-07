@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_URL = "http://127.0.0.1:8000/api/tasks/";
+const API_URL = "https://todobackend-h9se.onrender.com/api/tasks/"; 
 
 export const useTasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -40,7 +40,7 @@ export const useTasks = () => {
 
   const addTask = async () => {
     if (!newTask.trim()) return;
-    
+
     setLoading(true);
     setError(null);
     try {
@@ -99,7 +99,7 @@ export const useTasks = () => {
 
   const deleteTask = async (id) => {
     if (!window.confirm("Are you sure you want to delete this task?")) return;
-    
+
     setLoading(true);
     setError(null);
     try {
@@ -135,7 +135,7 @@ export const useTasks = () => {
 
   const saveTask = async (id) => {
     if (!editText.trim()) return;
-    
+
     setLoading(true);
     setError(null);
     try {
