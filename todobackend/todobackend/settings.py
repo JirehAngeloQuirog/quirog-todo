@@ -15,8 +15,6 @@ ALLOWED_HOSTS = ['quirog-todo.onrender.com', 'localhost', '127.0.0.1']
 # CORS (for GitHub Pages frontend)
 CORS_ALLOWED_ORIGINS = [
     "https://jirehangeloquirog.github.io",
-    "http://localhost:5174",  
-    "http://127.0.0.1:5173",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
@@ -86,13 +84,6 @@ DATABASE_URL = os.getenv('postgresql://quirog_todobackend_user:tI1A62gDv1g3JfZpF
 if DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
     }
 
 # Password validation
